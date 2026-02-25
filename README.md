@@ -19,3 +19,4 @@ View your app in AI Studio: https://ai.studio/apps/0dacb28b-7412-42ac-8f30-fe326
 3. Run the app:
    `npm run dev`
 # GreenExterminator
+# GreenExterminator
