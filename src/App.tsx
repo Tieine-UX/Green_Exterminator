@@ -386,7 +386,7 @@ const AboutPage = () => {
             >
               <div className="absolute inset-0 bg-emerald-500 transform -translate-x-4 translate-y-4 md:-translate-x-6 md:translate-y-6 rounded-3xl" />
               <img 
-                src="https://picsum.photos/seed/herb-extract/800/800" 
+                src="file:///Users/youngdev/Downloads/EEF23D83-55B4-4C8B-B993-0157DA4D1380.png" 
                 alt="Herbal Extract" 
                 className="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-2xl border-4 border-white"
                 referrerPolicy="no-referrer"
