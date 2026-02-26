@@ -33,10 +33,10 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-3">
             <span className="font-bold text-2xl text-stone-900 tracking-tight">Green Exterminator</span>
             <div className="bg-emerald-100 p-2 rounded-xl">
-              <img src="https://drive.google.com/file/d/1YyMt1VKsHG1shhpkp4nTK-Fsvp2LwJSS/view?usp=drive_link" alt="Logo" className="w-8 h-8 object-contain" />
+              <Leaf className="w-8 h-8 text-emerald-700" />
             </div>
-        </Link>
-
+          </Link>
+          
           {/* Desktop Nav */}
           <div className="hidden lg:flex space-x-8">
             {navLinks.map((link) => (
