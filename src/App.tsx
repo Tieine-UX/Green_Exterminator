@@ -386,7 +386,7 @@ const AboutPage = () => {
             >
               <div className="absolute inset-0 bg-emerald-500 transform -translate-x-4 translate-y-4 md:-translate-x-6 md:translate-y-6 rounded-3xl" />
               <img 
-                src="https://drive.google.com/file/d/1zFeeSkMTPWX_NhD8zWu-icYRyUeEW8Ye/view?usp=sharing" 
+                src="https://fastly.picsum.photos/id/678/800/800.jpg?hmac=GjijFyYCyK7571v3hI1VVlmtdNCaC5HwnzFhcDmpBm0" 
                 alt="Herbal Extract" 
                 className="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-2xl border-4 border-white"
                 referrerPolicy="no-referrer"
@@ -683,9 +683,9 @@ const ReviewsPage = () => {
 
 const ContactPage = () => {
   const teamMembers = [
-    { id: 1, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]" },
-    { id: 2, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]" },
-    { id: 3, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]" },
+    { id: 1, name: "นาย กรวิชญ์ กฤษฎา", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]" },
+    { id: 2, name: "นาย พีรพัฒน์ พุทธวีวรรณ", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]" },
+    { id: 3, name: "นางสาว ภัควลัญชญ์ แสงจันทร์", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]" },
   ];
 
   return (
