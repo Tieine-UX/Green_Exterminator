@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion'; // เปลี่ยนตรงนี้
 import { ChevronLeft, ChevronRight, Leaf, Mail, Phone, MapPin, Facebook, Instagram, Menu, X } from 'lucide-react';
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -275,19 +274,19 @@ const Footer = () => {
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <MapPin className="w-5 h-5 text-orange-500" />
                 </div>
-                <span className="text-stone-400 mt-1">123 ถนนสมุนไพร แขวงธรรมชาติ เขตสีเขียว กรุงเทพฯ 10000</span>
+                <span className="text-stone-400 mt-1">-</span>
               </li>
               <li className="flex items-center gap-4">
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <Phone className="w-5 h-5 text-yellow-500" />
                 </div>
-                <span className="text-stone-400">02-123-4567</span>
+                <span className="text-stone-400">-</span>
               </li>
               <li className="flex items-center gap-4">
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <Mail className="w-5 h-5 text-emerald-500" />
                 </div>
-                <span className="text-stone-400">contact@greenexterminator.com</span>
+                <span className="text-stone-400">greenexterminator521@gmail.com</span>
               </li>
             </ul>
           </div>
