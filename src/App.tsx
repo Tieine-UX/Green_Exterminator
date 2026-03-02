@@ -291,7 +291,7 @@ const Footer = () => {
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <Mail className="w-5 h-5 text-emerald-500" />
                 </div>
-                <span className="text-stone-400">contact@greenexterminator.com</span>
+                <span className="text-stone-400">greenexterminator521@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -387,12 +387,12 @@ const AboutPage = () => {
             >
               <div className="absolute inset-0 bg-emerald-500 transform -translate-x-4 translate-y-4 md:-translate-x-6 md:translate-y-6 rounded-3xl" />
               <img 
-                src="https://picsum.photos/seed/herb-extract/800/800" 
+                src="product_.jpg" 
                 alt="Herbal Extract" 
                 className="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-2xl border-4 border-white"
                 referrerPolicy="no-referrer"
               />
-              
+
               <div className="absolute -bottom-10 -right-10 bg-yellow-400 w-32 h-32 rounded-full mix-blend-multiply filter blur-2xl opacity-70 z-0 animate-pulse" />
               <div className="absolute -top-10 -left-10 bg-orange-400 w-32 h-32 rounded-full mix-blend-multiply filter blur-2xl opacity-70 z-0 animate-pulse" style={{ animationDelay: '1s' }} />
             </motion.div>
