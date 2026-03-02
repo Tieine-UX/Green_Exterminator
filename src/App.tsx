@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// เพิ่ม useParams เข้าไป
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useParams } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion'; // เปลี่ยนตรงนี้
-// เพิ่ม Minus, Plus, ShoppingCart, Send เข้าไป
-import { ChevronLeft, ChevronRight, Leaf, Mail, Phone, MapPin, Facebook, Instagram, Menu, X, Minus, Plus, ShoppingCart, Send } from 'lucide-react';   // ตัวอย่างการนำเข้ารูปภาพ
+import { motion, AnimatePresence } from 'motion/react';
+import { ChevronLeft, ChevronRight, Leaf, Mail, Phone, MapPin, Facebook, Instagram, Menu, X, ShoppingCart, Minus, Plus } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,21 +99,21 @@ const Navbar = () => {
 const slides = [
   {
     id: 1,
-    image: "https://picsum.photos/seed/herb1/1920/1080",
+    image: "https://picsum.photos/seed/farm/1920/1080", // เปลี่ยน URL รูปภาพที่นี่
     title: "พลังแห่งธรรมชาติ",
     subtitle: "น้ำหมักสมุนไพรเพื่อการเกษตรที่ยั่งยืน ปลอดภัย ไร้สารเคมี",
     color: "from-emerald-900/90 to-stone-900/80"
   },
   {
     id: 2,
-    image: "https://picsum.photos/seed/herb2/1920/1080",
+    image: "https://picsum.photos/seed/leaves/1920/1080", // เปลี่ยน URL รูปภาพที่นี่
     title: "นวัตกรรมสีเขียว",
     subtitle: "ปกป้องพืชผลของคุณด้วยภูมิปัญญาชาวบ้านผสานเทคโนโลยีสมัยใหม่",
     color: "from-orange-900/90 to-stone-900/80"
   },
   {
     id: 3,
-    image: "https://picsum.photos/seed/herb3/1920/1080",
+    image: "https://picsum.photos/seed/agriculture/1920/1080", // เปลี่ยน URL รูปภาพที่นี่
     title: "ผลผลิตที่ปลอดภัย",
     subtitle: "เพื่อสุขภาพที่ดีของผู้ปลูกและผู้บริโภค",
     color: "from-yellow-900/90 to-stone-900/80"
@@ -279,19 +277,19 @@ const Footer = () => {
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <MapPin className="w-5 h-5 text-orange-500" />
                 </div>
-                <span className="text-stone-400 mt-1">-</span>
+                <span className="text-stone-400 mt-1">123 ถนนสมุนไพร แขวงธรรมชาติ เขตสีเขียว กรุงเทพฯ 10000</span>
               </li>
               <li className="flex items-center gap-4">
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <Phone className="w-5 h-5 text-yellow-500" />
                 </div>
-                <span className="text-stone-400">096-502-4810</span>
+                <span className="text-stone-400">02-123-4567</span>
               </li>
               <li className="flex items-center gap-4">
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <Mail className="w-5 h-5 text-emerald-500" />
                 </div>
-                <span className="text-stone-400">greenexterminator521@gmail.com</span>
+                <span className="text-stone-400">contact@greenexterminator.com</span>
               </li>
             </ul>
           </div>
@@ -321,9 +319,15 @@ const HomePage = () => {
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="w-full aspect-square md:aspect-[4/3] bg-stone-200 rounded-3xl border-2 border-dashed border-stone-300 flex items-center justify-center overflow-hidden shadow-inner"
+              className="w-full aspect-square md:aspect-[4/3] bg-stone-200 rounded-3xl border-2 border-dashed border-stone-300 flex items-center justify-center overflow-hidden shadow-inner relative group"
             >
-              <span className="text-stone-400 font-medium text-lg text-center px-4">[ รูปภาพโปรโมทน้ำหมัก ]</span>
+              {/* เปลี่ยน URL รูปภาพโปรโมทน้ำหมักที่ src ด้านล่าง */}
+              <img 
+                src="https://drive.google.com/file/d/1DvATlWU-wVt4t4dfalHhQ_-Ra-VXe9vW/view?usp=sharing" 
+                alt="รูปภาพโปรโมทน้ำหมัก" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
             </motion.div>
             
             {/* Right: Content */}
@@ -461,8 +465,14 @@ const ProductsPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[1, 2, 3].map((item) => (
                 <div key={item} className="bg-stone-50 rounded-3xl p-8 border border-stone-100 hover:shadow-xl transition-shadow flex flex-col items-center">
-                  <div className="w-full aspect-square bg-stone-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center border-2 border-dashed border-stone-300">
-                    <span className="text-stone-400 font-medium">[ Product Image {item} ]</span>
+                  <div className="w-full aspect-square bg-stone-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center border-2 border-dashed border-stone-300 relative group">
+                    {/* เปลี่ยน URL รูปภาพสินค้าที่ src ด้านล่าง */}
+                    <img 
+                      src={`https://picsum.photos/seed/product${item}/400/400`} 
+                      alt={`Product ${item}`} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                   <h3 className="text-2xl font-bold text-stone-900 mb-2">สูตรที่ {item}</h3>
                   <p className="text-stone-600 mb-6">รายละเอียดผลิตภัณฑ์สูตรที่ {item} (Template Content)</p>
@@ -505,8 +515,14 @@ const ProductDetailPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               {/* Product Image */}
               <div className="bg-stone-100 p-8 md:p-12 flex items-center justify-center min-h-[400px]">
-                <div className="w-full max-w-md aspect-square bg-white rounded-2xl border-2 border-dashed border-stone-300 flex items-center justify-center shadow-sm">
-                  <span className="text-stone-400 font-medium text-lg">[ รูปภาพสินค้า สูตรที่ {id} ]</span>
+                <div className="w-full max-w-md aspect-square bg-white rounded-2xl border-2 border-dashed border-stone-300 flex items-center justify-center shadow-sm overflow-hidden relative">
+                  {/* เปลี่ยน URL รูปภาพสินค้าที่ src ด้านล่าง */}
+                  <img 
+                    src={`https://picsum.photos/seed/product${id}/800/800`} 
+                    alt={`Product ${id}`} 
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
               </div>
 
@@ -525,12 +541,12 @@ const ProductDetailPage = () => {
                       <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     ))}
                   </div>
-                  <span className="text-stone-500 text-sm">ขายแล้ว 0 ชิ้น</span>
+                  <span className="text-stone-500 text-sm">ขายแล้ว 1.2k ชิ้น</span>
                 </div>
 
                 <div className="mb-8">
-                  <span className="text-4xl font-bold text-orange-600">฿50</span>
-                  <span className="text-stone-400 line-through ml-3">90฿</span>
+                  <span className="text-4xl font-bold text-orange-600">฿250</span>
+                  <span className="text-stone-400 line-through ml-3">฿350</span>
                 </div>
 
                 <div className="space-y-6 mb-8 flex-grow">
@@ -544,7 +560,7 @@ const ProductDetailPage = () => {
                   <div>
                     <h3 className="font-bold text-stone-900 mb-2">วิธีใช้</h3>
                     <ul className="list-disc list-inside text-stone-600 space-y-1">
-                      <li>ผสมน้ำหมัก 100 ซีซี ต่อน้ำ 200 ลิตร</li>
+                      <li>ผสมน้ำหมัก 20 ซีซี ต่อน้ำ 20 ลิตร</li>
                       <li>ฉีดพ่นทางใบทุกๆ 7-10 วัน</li>
                       <li>ควรฉีดพ่นในช่วงเช้าหรือเย็นที่แดดไม่จัด</li>
                     </ul>
@@ -572,7 +588,7 @@ const ProductDetailPage = () => {
                         <Plus className="w-4 h-4" />
                       </button>
                     </div>
-                    <span className="text-stone-500 text-sm">มีสินค้าทั้งหมด 0 ชิ้น</span>
+                    <span className="text-stone-500 text-sm">มีสินค้าทั้งหมด 500 ชิ้น</span>
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
@@ -684,11 +700,11 @@ const ReviewsPage = () => {
 
 const ContactPage = () => {
   const teamMembers = [
-    { id: 1, name: "กรวิชญ์ กฤษฎา", role: "หัวหน้างานวิจัย", contact: "096-502-4810" },
-    { id: 2, name: "พีรพัฒน์ พุทธวีวรรณ", role: "จัดการด้านระบบและข้อมูล", contact: "091-854-5781" },
-    { id: 3, name: "ภัควลัญชญ์ แสงจันทร์", role: "จัดการด้านการบัญชีและดูแลน้ำหมัก", contact: "065-983-5099" },
+    { id: 1, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "https://picsum.photos/seed/team1/400/500" },
+    { id: 2, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "https://picsum.photos/seed/team2/400/500" },
+    { id: 3, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "https://picsum.photos/seed/team3/400/500" },
   ];
-  
+
   return (
     <div className="pt-20">
       <section className="py-24 bg-white min-h-[70vh] flex items-center">
@@ -700,8 +716,14 @@ const ContactPage = () => {
               {teamMembers.map((member, index) => (
                 <div key={member.id} className={`bg-stone-50 p-6 rounded-3xl border border-stone-100 shadow-sm flex flex-col items-center gap-8 hover:shadow-md transition-shadow ${index === 1 ? 'sm:flex-row-reverse' : 'sm:flex-row'}`}>
                   {/* Image Template */}
-                  <div className="w-40 sm:w-48 aspect-[4/5] shrink-0 bg-stone-200 rounded-2xl border-2 border-dashed border-stone-300 flex items-center justify-center overflow-hidden">
-                    <span className="text-stone-400 font-medium text-sm text-center px-4">[ รูปภาพ ]<br/>(4:5)</span>
+                  <div className="w-40 sm:w-48 aspect-[4/5] shrink-0 bg-stone-200 rounded-2xl border-2 border-dashed border-stone-300 flex items-center justify-center overflow-hidden relative group">
+                    {/* เปลี่ยน URL รูปภาพทีมงานที่ src ด้านล่าง หรือในตัวแปร teamMembers */}
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                   
                   {/* Info */}
