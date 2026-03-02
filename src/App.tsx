@@ -323,7 +323,7 @@ const HomePage = () => {
             >
               {/* เปลี่ยน URL รูปภาพโปรโมทน้ำหมักที่ src ด้านล่าง */}
               <img 
-                src="/assets/images/product_.jpg" 
+                src="/images/product_1.jpg" 
                 alt="รูปภาพโปรโมทน้ำหมัก" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 referrerPolicy="no-referrer"
