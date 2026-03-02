@@ -389,7 +389,6 @@ const AboutPage = () => {
               <img 
                 src="product_.jpg" 
                 alt="Herbal Extract" 
-                className="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-2xl border-4 border-white"
                 referrerPolicy="no-referrer"
               />
 
