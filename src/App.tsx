@@ -522,9 +522,9 @@ const ProductsPage = () => {
             <p className="text-xl text-stone-600 max-w-3xl mx-auto mb-16">
               ผลิตภัณฑ์น้ำหมักสมุนไพรสูตรต่างๆ ที่คิดค้นมาเพื่อตอบโจทย์ปัญหาการเกษตรอย่างตรงจุด
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((item) => (
-                <div key={item} className="bg-stone-50 rounded-3xl p-8 border border-stone-100 hover:shadow-xl transition-shadow flex flex-col items-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+              {[1].map((item) => (
+                <div key={item} className="bg-stone-50 rounded-3xl p-8 border border-stone-100 hover:shadow-xl transition-shadow flex flex-col items-center md:col-start-2">
                   <div className="w-full aspect-square bg-stone-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center border-2 border-dashed border-stone-300 relative group">
                     {/* เปลี่ยน URL รูปภาพสินค้าที่ src ด้านล่าง */}
                     <img 
@@ -552,6 +552,7 @@ const ProductsPage = () => {
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
+  const [successMsg, setSuccessMsg] = useState("");
 
   const decreaseQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -559,6 +560,16 @@ const ProductDetailPage = () => {
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
+  };
+
+  const handleBuy = () => {
+    setSuccessMsg("สั่งซื้อสำเร็จ!");
+    setTimeout(() => setSuccessMsg(""), 3000);
+  };
+
+  const handleAddToCart = () => {
+    setSuccessMsg("เพิ่มลงตะกร้าสำเร็จ!");
+    setTimeout(() => setSuccessMsg(""), 3000);
   };
 
   return (
@@ -601,12 +612,12 @@ const ProductDetailPage = () => {
                       <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     ))}
                   </div>
-                  <span className="text-stone-500 text-sm">ขายแล้ว 0 ชิ้น</span>
+                  <span className="text-stone-500 text-sm">ขายแล้ว 1.2k ชิ้น</span>
                 </div>
 
                 <div className="mb-8">
-                  <span className="text-4xl font-bold text-orange-600">฿139</span>
-                  <span className="text-stone-400 line-through ml-3">฿200</span>
+                  <span className="text-4xl font-bold text-orange-600">฿250</span>
+                  <span className="text-stone-400 line-through ml-3">฿350</span>
                 </div>
 
                 <div className="space-y-6 mb-8 flex-grow">
@@ -620,7 +631,7 @@ const ProductDetailPage = () => {
                   <div>
                     <h3 className="font-bold text-stone-900 mb-2">วิธีใช้</h3>
                     <ul className="list-disc list-inside text-stone-600 space-y-1">
-                      <li>ผสมน้ำหมัก 50 กรัม ต่อน้ำ 100 ลิตร</li>
+                      <li>ผสมน้ำหมัก 20 ซีซี ต่อน้ำ 20 ลิตร</li>
                       <li>ฉีดพ่นทางใบทุกๆ 7-10 วัน</li>
                       <li>ควรฉีดพ่นในช่วงเช้าหรือเย็นที่แดดไม่จัด</li>
                     </ul>
@@ -648,18 +659,39 @@ const ProductDetailPage = () => {
                         <Plus className="w-4 h-4" />
                       </button>
                     </div>
-                    <span className="text-stone-500 text-sm">มีสินค้าทั้งหมด 25 ชิ้น</span>
+                    <span className="text-stone-500 text-sm">มีสินค้าทั้งหมด 500 ชิ้น</span>
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="flex-1 flex items-center justify-center gap-2 bg-emerald-50 border-2 border-emerald-600 text-emerald-700 font-bold py-4 px-6 rounded-xl hover:bg-emerald-100 transition-colors">
+                    <button 
+                      onClick={handleAddToCart}
+                      className="flex-1 flex items-center justify-center gap-2 bg-emerald-50 border-2 border-emerald-600 text-emerald-700 font-bold py-4 px-6 rounded-xl hover:bg-emerald-100 transition-colors"
+                    >
                       <ShoppingCart className="w-5 h-5" />
                       เพิ่มลงรถเข็น
                     </button>
-                    <button className="flex-1 bg-orange-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-orange-700 transition-colors shadow-md hover:shadow-lg">
+                    <button 
+                      onClick={handleBuy}
+                      className="flex-1 bg-orange-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-orange-700 transition-colors shadow-md hover:shadow-lg"
+                    >
                       ซื้อสินค้า
                     </button>
                   </div>
+                  
+                  {/* Success Message */}
+                  <AnimatePresence>
+                    {successMsg && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="mt-4 p-4 bg-emerald-100 border border-emerald-300 text-emerald-800 rounded-xl text-center font-bold flex items-center justify-center gap-2"
+                      >
+                        <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                        {successMsg}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </div>
             </div>
@@ -672,6 +704,8 @@ const ProductDetailPage = () => {
 
 const ReviewsPage = () => {
   const location = useLocation();
+  const [feedback, setFeedback] = useState("");
+  const [feedbackSuccess, setFeedbackSuccess] = useState(false);
 
   useEffect(() => {
     if (location.hash === '#faq') {
@@ -690,6 +724,15 @@ const ReviewsPage = () => {
     { q: "สามารถใช้ร่วมกับปุ๋ยเคมีได้หรือไม่?", a: "สามารถใช้ร่วมได้ แต่แนะนำให้เว้นระยะห่างจากการใส่ปุ๋ยเคมีประมาณ 3-5 วัน เพื่อประสิทธิภาพสูงสุด" },
     { q: "เก็บรักษาได้นานเท่าไหร่?", a: "สามารถเก็บรักษาในที่ร่ม อุณหภูมิปกติ ได้นานถึง 6 เดือน - 1 ปี" }
   ];
+
+  const handleFeedbackSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (feedback.trim()) {
+      setFeedbackSuccess(true);
+      setFeedback("");
+      setTimeout(() => setFeedbackSuccess(false), 3000);
+    }
+  };
 
   return (
     <div className="pt-20">
@@ -714,8 +757,13 @@ const ReviewsPage = () => {
                   </div>
                   <p className="text-emerald-50 mb-6 italic">"[ Template Review Content ]"</p>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-emerald-700 rounded-full overflow-hidden flex items-center justify-center">
-                      <span className="text-xs">User</span>
+                    <div className="w-12 h-12 bg-emerald-700 rounded-full overflow-hidden flex items-center justify-center shrink-0">
+                      <img 
+                        src={`https://picsum.photos/seed/user${item}/100/100`} 
+                        alt={`User ${item}`} 
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
                     </div>
                     <div>
                       <h4 className="font-bold text-white">เกษตรกรท่านที่ {item}</h4>
@@ -754,15 +802,63 @@ const ReviewsPage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Feedback Section */}
+      <section className="py-24 bg-white border-t border-stone-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-stone-50 p-8 md:p-12 rounded-3xl border border-stone-200 shadow-sm text-center"
+          >
+            <h2 className="text-3xl font-bold text-stone-900 mb-4">ส่งความคิดเห็นถึง<span className="text-emerald-600">ผู้พัฒนา</span></h2>
+            <p className="text-stone-600 mb-8">
+              เรายินดีรับฟังทุกความคิดเห็นและข้อเสนอแนะ เพื่อนำไปพัฒนาผลิตภัณฑ์ให้ดียิ่งขึ้น
+            </p>
+            
+            <form onSubmit={handleFeedbackSubmit} className="space-y-4">
+              <textarea 
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
+                placeholder="เขียนความคิดเห็นของคุณที่นี่..."
+                className="w-full p-4 rounded-2xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent min-h-[150px] resize-y"
+                required
+              ></textarea>
+              <button 
+                type="submit"
+                className="w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-colors shadow-md hover:shadow-lg"
+              >
+                ส่งความคิดเห็น
+              </button>
+            </form>
+
+            <AnimatePresence>
+              {feedbackSuccess && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mt-6 p-4 bg-emerald-100 text-emerald-800 rounded-xl font-medium inline-flex items-center gap-2"
+                >
+                  <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  ขอบคุณสำหรับความคิดเห็นของคุณ!
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };
 
 const ContactPage = () => {
   const teamMembers = [
-    { id: 1, name: "นาย.กรวิชญ์ กฤษฎา", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "/images/KIM.jpg" },
-    { id: 2, name: "นาย.พีรพัฒน์ พุทธวีวรรณ", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "/images/TOEY.jpg" },
-    { id: 3, name: "นางสาว ภัควลัณชญ์ แสงจันทร์", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "/images/TANG.jpg" },
+    { id: 1, name: "นาย.กรวิชญ์ กฤษฎา", role: "หัวหน้าโครงการ", contact: "เบอร์ : 096-502-4810 ", image: "/images/KIM.jpg" },
+    { id: 2, name: "นาย.พีรพัฒน์ พุทธวีวรรณ", role: "จัดการบัญชีและดูแลน้ำหมัก", contact: "เบอร์ : 065-983-5099", image: "/images/TOEY.jpg" },
+    { id: 3, name: "นางสาว ภัควลัณชญ์ แสงจันทร์", role: "จัดการระบบและดูแลข้อมูล", contact: "เบอร์ : 091-854-5781", image: "/images/TANG.jpg" },
   ];
 
   return (
