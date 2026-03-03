@@ -700,9 +700,9 @@ const ReviewsPage = () => {
 
 const ContactPage = () => {
   const teamMembers = [
-    { id: 1, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "https://picsum.photos/seed/team1/400/500" },
-    { id: 2, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "https://picsum.photos/seed/team2/400/500" },
-    { id: 3, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "https://picsum.photos/seed/team3/400/500" },
+    { id: 1, name: "นาย.กรวิชญ์ กฤษฎา", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "/images/KIM.jpg" },
+    { id: 2, name: "นาย.พีรพัฒน์ พุทธวีวรรณ", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "/images/TOEY.jpg" },
+    { id: 3, name: "นางสาว ภัควลัณชญ์ แสงจันทร์", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "/images/TANG.jpg" },
   ];
 
   return (
