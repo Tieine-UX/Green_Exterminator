@@ -358,17 +358,75 @@ const HomePage = () => {
 };
 
 const SupportPage = () => {
+   const supporters = [
+    {
+      id: 1,
+      name: "โครงการเด็กอวด(ทำ)ดี Season 3",
+      role: "ผู้สนับสนุนหลัก",
+      description: "[ รายละเอียดการสนับสนุน เช่น สนับสนุนทุนวิจัย, ให้คำปรึกษาด้านการเกษตร, หรือสนับสนุนพื้นที่ทดลอง ]",
+      image: "https://picsum.photos/seed/support1/400/400"
+    },
+    {
+      id: 2,
+      name: "[ ชื่อผู้สนับสนุน / องค์กรที่ 2 ]",
+      role: "ที่ปรึกษาโครงการ",
+      description: "[ รายละเอียดการสนับสนุน เช่น สนับสนุนทุนวิจัย, ให้คำปรึกษาด้านการเกษตร, หรือสนับสนุนพื้นที่ทดลอง ]",
+      image: "https://picsum.photos/seed/support2/400/400"
+    },
+    {
+      id: 3,
+      name: "โครงการเด็กอวด(ทำ)ดี Season 3",
+      role: "ผู้สนับสนุนหลัก",
+      description: "[ รายละเอียดการสนับสนุน เช่น สนับสนุนทุนวิจัย, ให้คำปรึกษาด้านการเกษตร, หรือสนับสนุนพื้นที่ทดลอง ]",
+      image: "https://picsum.photos/seed/support1/400/400"
+    },
+    {
+      id: 4,
+      name: "โครงการเด็กอวด(ทำ)ดี Season 3",
+      role: "ผู้สนับสนุนหลัก",
+      description: "[ รายละเอียดการสนับสนุน เช่น สนับสนุนทุนวิจัย, ให้คำปรึกษาด้านการเกษตร, หรือสนับสนุนพื้นที่ทดลอง ]",
+      image: "https://picsum.photos/seed/support1/400/400"
+    }
+  ];
+
   return (
     <div className="pt-20">
       <section className="py-24 bg-white border-b border-stone-100 min-h-[70vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h2 className="text-4xl font-bold text-stone-900 mb-6">Support & <span className="text-emerald-600">Objectives</span></h2>
-            <p className="text-xl text-stone-600 max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold text-stone-900 mb-6 text-center">Support & <span className="text-emerald-600">Objectives</span></h2>
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto mb-12 text-center">
               โครงการของเราได้รับการสนับสนุนจากหลายภาคส่วน เพื่อบรรลุวัตถุประสงค์ในการสร้างการเกษตรที่ยั่งยืนและปลอดภัย
             </p>
-            <div className="w-full max-w-4xl mx-auto h-64 bg-stone-50 rounded-3xl border-2 border-dashed border-stone-200 flex items-center justify-center">
-              <span className="text-stone-400 font-medium">[ Template Content: รายละเอียดการสนับสนุนและวัตถุประสงค์ ]</span>
+            
+            <div className="space-y-6">
+              {supporters.map((supporter) => (
+                <div key={supporter.id} className="bg-stone-50 p-6 rounded-3xl border border-stone-100 shadow-sm flex flex-col items-center gap-8 hover:shadow-md transition-shadow sm:flex-row">
+                  {/* Image Frame (Circle) */}
+                  <div className="w-40 sm:w-48 aspect-square shrink-0 bg-stone-200 rounded-full border-2 border-dashed border-stone-300 flex items-center justify-center overflow-hidden relative group">
+                    <img 
+                      src={supporter.image} 
+                      alt={supporter.name} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  
+                  {/* Info */}
+                  <div className="flex-grow text-center space-y-3 sm:text-left">
+                    <div>
+                      <h3 className="text-2xl font-bold text-stone-900">{supporter.name}</h3>
+                      <p className="text-emerald-600 font-medium text-lg">{supporter.role}</p>
+                    </div>
+                    
+                    <div className="pt-4 border-t border-stone-200">
+                      <p className="text-stone-600 leading-relaxed">
+                        {supporter.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
