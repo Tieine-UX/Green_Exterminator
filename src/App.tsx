@@ -277,19 +277,19 @@ const Footer = () => {
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <MapPin className="w-5 h-5 text-orange-500" />
                 </div>
-                <span className="text-stone-400 mt-1">123 ถนนสมุนไพร แขวงธรรมชาติ เขตสีเขียว กรุงเทพฯ 10000</span>
+                <span className="text-stone-400 mt-1">19/1 ถ.มงฟอร์ต ต.ท่าศาลา อ.เมือง จ.เชียงใหม่ 50000</span>
               </li>
               <li className="flex items-center gap-4">
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <Phone className="w-5 h-5 text-yellow-500" />
                 </div>
-                <span className="text-stone-400">02-123-4567</span>
+                <span className="text-stone-400">096-502-4810</span>
               </li>
               <li className="flex items-center gap-4">
                 <div className="bg-stone-800 p-2 rounded-lg shrink-0">
                   <Mail className="w-5 h-5 text-emerald-500" />
                 </div>
-                <span className="text-stone-400">contact@greenexterminator.com</span>
+                <span className="text-stone-400">greenexterminator521@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -391,7 +391,7 @@ const AboutPage = () => {
             >
               <div className="absolute inset-0 bg-emerald-500 transform -translate-x-4 translate-y-4 md:-translate-x-6 md:translate-y-6 rounded-3xl" />
               <img 
-                src="https://picsum.photos/seed/herb-extract/800/800" 
+                src="product_2.jpg" 
                 alt="Herbal Extract" 
                 className="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-2xl border-4 border-white"
                 referrerPolicy="no-referrer"
@@ -541,12 +541,12 @@ const ProductDetailPage = () => {
                       <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     ))}
                   </div>
-                  <span className="text-stone-500 text-sm">ขายแล้ว 1.2k ชิ้น</span>
+                  <span className="text-stone-500 text-sm">ขายแล้ว 0 ชิ้น</span>
                 </div>
 
                 <div className="mb-8">
-                  <span className="text-4xl font-bold text-orange-600">฿250</span>
-                  <span className="text-stone-400 line-through ml-3">฿350</span>
+                  <span className="text-4xl font-bold text-orange-600">฿139</span>
+                  <span className="text-stone-400 line-through ml-3">฿200</span>
                 </div>
 
                 <div className="space-y-6 mb-8 flex-grow">
@@ -560,7 +560,7 @@ const ProductDetailPage = () => {
                   <div>
                     <h3 className="font-bold text-stone-900 mb-2">วิธีใช้</h3>
                     <ul className="list-disc list-inside text-stone-600 space-y-1">
-                      <li>ผสมน้ำหมัก 20 ซีซี ต่อน้ำ 20 ลิตร</li>
+                      <li>ผสมน้ำหมัก 50 กรัม ต่อน้ำ 100 ลิตร</li>
                       <li>ฉีดพ่นทางใบทุกๆ 7-10 วัน</li>
                       <li>ควรฉีดพ่นในช่วงเช้าหรือเย็นที่แดดไม่จัด</li>
                     </ul>
@@ -588,7 +588,7 @@ const ProductDetailPage = () => {
                         <Plus className="w-4 h-4" />
                       </button>
                     </div>
-                    <span className="text-stone-500 text-sm">มีสินค้าทั้งหมด 500 ชิ้น</span>
+                    <span className="text-stone-500 text-sm">มีสินค้าทั้งหมด 25 ชิ้น</span>
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
