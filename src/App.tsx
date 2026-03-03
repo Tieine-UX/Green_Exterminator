@@ -857,8 +857,8 @@ const ReviewsPage = () => {
 const ContactPage = () => {
   const teamMembers = [
     { id: 1, name: "นาย.กรวิชญ์ กฤษฎา", role: "หัวหน้าโครงการ", contact: "เบอร์ : 096-502-4810 ", image: "/images/KIM.jpg" },
-    { id: 2, name: "นาย.พีรพัฒน์ พุทธวีวรรณ", role: "จัดการบัญชีและดูแลน้ำหมัก", contact: "เบอร์ : 065-983-5099", image: "/images/TOEY.jpg" },
-    { id: 3, name: "นางสาว ภัควลัณชญ์ แสงจันทร์", role: "จัดการระบบและดูแลข้อมูล", contact: "เบอร์ : 091-854-5781", image: "/images/TANG.jpg" },
+    { id: 2, name: "นาย.พีรพัฒน์ พุทธวีวรรณ", role: "ดูแลระบบและเก็บข้อมูล", contact: "เบอร์ : 065-983-5099", image: "/images/TOEY.jpg" },
+    { id: 3, name: "นางสาว ภัควลัณชญ์ แสงจันทร์", role: "จัดการบัญชีและดูแลน้ำหมัก", contact: "เบอร์ : 091-854-5781", image: "/images/TANG.jpg" },
   ];
 
   return (
