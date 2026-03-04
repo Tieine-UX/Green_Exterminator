@@ -364,28 +364,28 @@ const SupportPage = () => {
       name: "โครงการเด็กอวด(ทำ)ดี Season 3",
       role: "ผู้สนับสนุนหลัก",
       description: "[ รายละเอียดการสนับสนุน เช่น สนับสนุนทุนวิจัย, ให้คำปรึกษาด้านการเกษตร, หรือสนับสนุนพื้นที่ทดลอง ]",
-      image: "https://picsum.photos/seed/support1/400/400"
+      image: "/images/dekoau.jpg"
     },
     {
       id: 2,
-      name: "[ ชื่อผู้สนับสนุน / องค์กรที่ 2 ]",
+      name: "สำนักนายกรัฐมนตรี",
       role: "ที่ปรึกษาโครงการ",
       description: "[ รายละเอียดการสนับสนุน เช่น สนับสนุนทุนวิจัย, ให้คำปรึกษาด้านการเกษตร, หรือสนับสนุนพื้นที่ทดลอง ]",
-      image: "https://picsum.photos/seed/support2/400/400"
+      image: "/images/สำนักนายก.jpg"
     },
     {
       id: 3,
-      name: "โครงการเด็กอวด(ทำ)ดี Season 3",
+      name: "King power",
       role: "ผู้สนับสนุนหลัก",
       description: "[ รายละเอียดการสนับสนุน เช่น สนับสนุนทุนวิจัย, ให้คำปรึกษาด้านการเกษตร, หรือสนับสนุนพื้นที่ทดลอง ]",
-      image: "https://picsum.photos/seed/support1/400/400"
+      image: "/images/logo_kingpower.jpg"
     },
     {
       id: 4,
-      name: "โครงการเด็กอวด(ทำ)ดี Season 3",
-      role: "ผู้สนับสนุนหลัก",
+      name: "โรงเรียนมงฟอร์ตวิทยาลัยเชียงใหม่",
+      role: "ที่ปรึกษาโครงการ",
       description: "[ รายละเอียดการสนับสนุน เช่น สนับสนุนทุนวิจัย, ให้คำปรึกษาด้านการเกษตร, หรือสนับสนุนพื้นที่ทดลอง ]",
-      image: "https://picsum.photos/seed/support1/400/400"
+      image: "/images/Montfort.png"
     }
   ];
 
