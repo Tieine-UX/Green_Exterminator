@@ -749,7 +749,7 @@ const ProductDetailPage = () => {
                 <div className="w-full max-w-md aspect-square bg-white rounded-2xl border-2 border-dashed border-stone-300 flex items-center justify-center shadow-sm overflow-hidden relative">
                   {/* เปลี่ยน URL รูปภาพสินค้าที่ src ด้านล่าง */}
                   <img 
-                    src={`https://picsum.photos/seed/product${id}/800/800`} 
+                    src={`/images/product_.jpg`} 
                     alt={`Product ${id}`} 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -999,7 +999,7 @@ const ReviewsPage = () => {
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-emerald-700 rounded-full overflow-hidden flex items-center justify-center shrink-0">
                       <img 
-                        src={`/images/product_.jpg`} 
+                        src={`L.JPG`} 
                         alt={`User ${item}`} 
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
