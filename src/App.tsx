@@ -504,7 +504,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-          {/* Silver Nano Section */}
+                {/* Silver Nano Section */}
       <section className="py-24 md:py-32 bg-white flex items-center border-t border-stone-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -580,19 +580,83 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative order-1 lg:order-2"
+              className="relative order-1 lg:order-2 group"
             >
-              <div className="absolute inset-0 bg-stone-100 transform translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6 rounded-3xl border border-stone-200" />
-              <img 
-                src="/images2/silver_nano.jpg" 
-                alt="Silver Nano Technology" 
-                className="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-2xl border-4 border-white"
-                referrerPolicy="no-referrer"
+              {/* Rotating Glow Ring */}
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                className="absolute -inset-4 bg-gradient-to-tr from-emerald-400 via-transparent to-orange-400 rounded-[40px] opacity-30 blur-xl z-0"
               />
+
+              {/* Background Plate */}
+              <div className="absolute inset-0 bg-stone-100 transform translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6 rounded-3xl border border-stone-200" />
+              
+              {/* Image Container with Scanning Effect */}
+              <div className="relative z-10 w-full aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                <img 
+                  src="/images/silver_nano.jpg" 
+                  alt="Silver Nano Technology" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+                
+                {/* Scanning Line Animation */}
+                <motion.div 
+                  animate={{ top: ["-10%", "110%"] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  className="absolute left-0 right-0 h-1 bg-emerald-400/50 blur-sm z-20 shadow-[0_0_15px_rgba(52,211,153,0.8)]"
+                />
+                
+                {/* Glass Shimmer */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              
+              {/* Floating Nano Particles */}
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ 
+                    x: Math.random() * 400 - 200, 
+                    y: Math.random() * 400 - 200,
+                    opacity: 0 
+                  }}
+                  animate={{ 
+                    x: [
+                      Math.random() * 400 - 200, 
+                      Math.random() * 400 - 200, 
+                      Math.random() * 400 - 200
+                    ],
+                    y: [
+                      Math.random() * 400 - 200, 
+                      Math.random() * 400 - 200, 
+                      Math.random() * 400 - 200
+                    ],
+                    opacity: [0, 0.8, 0],
+                    scale: [0.5, 1.2, 0.5]
+                  }}
+                  transition={{ 
+                    duration: 5 + Math.random() * 5, 
+                    repeat: Infinity, 
+                    ease: "easeInOut",
+                    delay: Math.random() * 2
+                  }}
+                  className={`absolute w-2 h-2 rounded-full z-20 blur-[1px] ${i % 2 === 0 ? 'bg-emerald-400' : 'bg-orange-400'}`}
+                  style={{ 
+                    left: '50%', 
+                    top: '50%',
+                    boxShadow: i % 2 === 0 ? '0 0 10px #34d399' : '0 0 10px #fb923c'
+                  }}
+                />
+              ))}
 
               {/* Decorative elements */}
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-emerald-100 rounded-full blur-2xl opacity-60 animate-pulse" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-orange-100 rounded-full blur-3xl opacity-60 animate-pulse" style={{ animationDelay: '1.5s' }} />
+              
+              {/* Tech Corner Accents */}
+              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-emerald-500 z-30 rounded-tl-lg" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-orange-500 z-30 rounded-br-lg" />
             </motion.div>
           </div>
         </div>
