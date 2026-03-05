@@ -325,7 +325,7 @@ const HomePage = () => {
               <img 
                 src="/images/Logo.jpg" 
                 alt="รูปภาพโปรโมทน้ำหมัก" 
-                className="w-90 h-90 object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full  h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
