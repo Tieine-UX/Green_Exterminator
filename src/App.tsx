@@ -1081,9 +1081,9 @@ const WorkAtmosphereScatter = () => {
 
 const ContactPage = () => {
   const teamMembers = [
-    { id: 1, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "https://picsum.photos/seed/team1/400/500" },
-    { id: 2, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "https://picsum.photos/seed/team2/400/500" },
-    { id: 3, name: "[ ชื่อ - นามสกุล ]", role: "[ หน้าที่ / ตำแหน่ง ]", contact: "[ ช่องทางการติดต่อ เช่น เบอร์โทร, อีเมล ]", image: "https://picsum.photos/seed/team3/400/500" },
+    { id: 1, name: "นาย.กรวิชญ์ กฤษฎา", role: "หัวหน้าโครงการ", contact: "เบอร์ : 096-502-4810 ", image: "/images/KIM.jpg" },
+    { id: 2, name: "นาย.พีรพัฒน์ พุทธวีวรรณ", role: "ดูแลระบบและเก็บข้อมูล", contact: "เบอร์ : 065-983-5099", image: "/images/TOEY.jpg" },
+    { id: 3, name: "นางสาว ภัควลัณชญ์ แสงจันทร์", role: "จัดการบัญชีและดูแลน้ำหมัก", contact: "เบอร์ : 091-854-5781", image: "/images/TANG.jpg" },
   ];
 
   return (
