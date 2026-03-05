@@ -323,7 +323,7 @@ const HomePage = () => {
             >
               {/* เปลี่ยน URL รูปภาพโปรโมทน้ำหมักที่ src ด้านล่าง */}
               <img 
-                src="/images/product_.jpg" 
+                src="/images/Logo_RBG.jpg" 
                 alt="รูปภาพโปรโมทน้ำหมัก" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 referrerPolicy="no-referrer"
@@ -528,7 +528,7 @@ const ProductsPage = () => {
                   <div className="w-full aspect-square bg-stone-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center border-2 border-dashed border-stone-300 relative group">
                     {/* เปลี่ยน URL รูปภาพสินค้าที่ src ด้านล่าง */}
                     <img 
-                      src={`https://picsum.photos/seed/product${item}/400/400`} 
+                      src={`/images/product_.jpg`} 
                       alt={`Product ${item}`} 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       referrerPolicy="no-referrer"
