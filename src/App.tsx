@@ -584,7 +584,7 @@ const AboutPage = () => {
             >
               <div className="absolute inset-0 bg-stone-100 transform translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6 rounded-3xl border border-stone-200" />
               <img 
-                src="/images2/silver_nano.png" 
+                src="/images2/silver nano.png" 
                 alt="Silver Nano Technology" 
                 className="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-2xl border-4 border-white"
                 referrerPolicy="no-referrer"
