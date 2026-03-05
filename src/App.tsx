@@ -973,12 +973,12 @@ const WorkAtmosphereScatter = () => {
       { id: 18, url: "/images2/pic6.JPG", rotation: 2, x: 6, y: -8 },
     ],
     [
-      { id: 13, url: "/images2/pic1.JPG", rotation: -3, x: -15, y: -5 },
-      { id: 14, url: "/images2/pic2.JPG", rotation: 4, x: 12, y: 8 },
-      { id: 15, url: "/images2/pic3.JPG", rotation: -2, x: -8, y: 14 },
-      { id: 16, url: "/images2/pic7.JPG", rotation: 5, x: 10, y: -10 },
-      { id: 17, url: "/images2/pic5.JPG", rotation: -7, x: -14, y: 4 },
-      { id: 18, url: "/images2/pic6.JPG", rotation: 2, x: 6, y: -8 },
+      { id: 19, url: "/images2/pic1.JPG", rotation: -3, x: -15, y: -5 },
+      { id: 20, url: "/images2/pic2.JPG", rotation: 4, x: 12, y: 8 },
+      { id: 21, url: "/images2/pic3.JPG", rotation: -2, x: -8, y: 14 },
+      { id: 22, url: "/images2/pic7.JPG", rotation: 5, x: 10, y: -10 },
+      { id: 23, url: "/images2/pic5.JPG", rotation: -7, x: -14, y: 4 },
+      { id: 24, url: "/images2/pic6.JPG", rotation: 2, x: 6, y: -8 },
     ]
   ];
 
