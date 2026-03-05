@@ -323,7 +323,7 @@ const HomePage = () => {
             >
               {/* เปลี่ยน URL รูปภาพโปรโมทน้ำหมักที่ src ด้านล่าง */}
               <img 
-                src="/images/Logo_RBG.jpg" 
+                src="/images/Logo.jpg" 
                 alt="รูปภาพโปรโมทน้ำหมัก" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 referrerPolicy="no-referrer"
@@ -553,6 +553,7 @@ const ProductDetailPage = () => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [successMsg, setSuccessMsg] = useState("");
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const decreaseQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -563,14 +564,16 @@ const ProductDetailPage = () => {
   };
 
   const handleBuy = () => {
+    setShowConfirm(true);
+  };
+
+  const confirmPurchase = () => {
+    setShowConfirm(false);
     setSuccessMsg("สั่งซื้อสำเร็จ!");
     setTimeout(() => setSuccessMsg(""), 3000);
   };
 
-  const handleAddToCart = () => {
-    setSuccessMsg("เพิ่มลงตะกร้าสำเร็จ!");
-    setTimeout(() => setSuccessMsg(""), 3000);
-  };
+  const totalPrice = quantity * 250;
 
   return (
     <div className="pt-20">
@@ -662,20 +665,40 @@ const ProductDetailPage = () => {
                     <span className="text-stone-500 text-sm">มีสินค้าทั้งหมด 500 ชิ้น</span>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <button 
-                      onClick={handleAddToCart}
-                      className="flex-1 flex items-center justify-center gap-2 bg-emerald-50 border-2 border-emerald-600 text-emerald-700 font-bold py-4 px-6 rounded-xl hover:bg-emerald-100 transition-colors"
-                    >
-                      <ShoppingCart className="w-5 h-5" />
-                      เพิ่มลงรถเข็น
-                    </button>
-                    <button 
+                  <div className="flex items-center gap-4">
+                    {/* Total Price Display */}
+                    <div className="bg-stone-50 px-6 py-3 rounded-xl border border-stone-200 flex flex-col justify-center min-w-[140px]">
+                      <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400 leading-none mb-1">ยอดรวมทั้งหมด</span>
+                      <span className="text-xl font-bold text-stone-900 leading-none">฿{totalPrice.toLocaleString()}</span>
+                    </div>
+
+                    {/* Neon Buy Button */}
+                    <motion.button 
                       onClick={handleBuy}
-                      className="flex-1 bg-orange-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-orange-700 transition-colors shadow-md hover:shadow-lg"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="flex-1 relative group rounded-xl p-[2px] overflow-hidden"
                     >
-                      ซื้อสินค้า
-                    </button>
+                      {/* Moving Border Beam */}
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250%] h-[250%] bg-[conic-gradient(from_0deg,transparent_0%,transparent_60%,#fb923c_100%)]"
+                      />
+
+                      <div className="relative z-10 bg-orange-600 text-white font-bold py-4 px-8 rounded-[10px] flex items-center justify-center gap-2 group-hover:bg-orange-500 transition-colors w-full h-full">
+                        ซื้อสินค้า
+                      </div>
+                      
+                      {/* Neon Glow Effect (Static/Pulse) */}
+                      <motion.div 
+                        animate={{ 
+                          opacity: [0.4, 0.8, 0.4],
+                        }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="absolute inset-0 rounded-xl border-2 border-orange-400/30 pointer-events-none z-20"
+                      />
+                    </motion.button>
                   </div>
                   
                   {/* Success Message */}
@@ -698,9 +721,69 @@ const ProductDetailPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Confirmation Modal */}
+      <AnimatePresence>
+        {showConfirm && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowConfirm(false)}
+              className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative bg-white rounded-3xl shadow-2xl border border-stone-200 p-8 max-w-md w-full overflow-hidden"
+            >
+              {/* Decorative Background */}
+              <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-32 h-32 bg-emerald-50 rounded-full blur-3xl opacity-50" />
+              
+              <div className="relative z-10 text-center">
+                <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <ShoppingCart className="w-10 h-10 text-emerald-600" />
+                </div>
+                
+                <h2 className="text-2xl font-bold text-stone-900 mb-2">ยืนยันการสั่งซื้อ</h2>
+                <p className="text-stone-600 mb-8">คุณต้องการยืนยันการสั่งซื้อน้ำหมักสมุนไพร สูตรที่ {id} จำนวน {quantity} ชิ้น ใช่หรือไม่?</p>
+                
+                <div className="bg-stone-50 rounded-2xl p-4 mb-8 border border-stone-100">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-stone-500">ยอดรวมสินค้า</span>
+                    <span className="font-bold text-stone-900">฿{totalPrice.toLocaleString()}</span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-stone-400">ค่าจัดส่ง</span>
+                    <span className="text-emerald-600 font-medium">ฟรี</span>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <button 
+                    onClick={() => setShowConfirm(false)}
+                    className="flex-1 px-6 py-4 bg-stone-100 text-stone-600 font-bold rounded-xl hover:bg-stone-200 transition-colors"
+                  >
+                    ยกเลิก
+                  </button>
+                  <button 
+                    onClick={confirmPurchase}
+                    className="flex-1 px-6 py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
+                  >
+                    ยืนยัน
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
+
 
 const ReviewsPage = () => {
   const location = useLocation();
@@ -853,6 +936,149 @@ const ReviewsPage = () => {
     </div>
   );
 };
+
+const WorkAtmosphereScatter = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+  const totalPages = 3;
+  
+  // Generate 3 pages of images
+  const allPages = Array.from({ length: totalPages }, (_, pageIndex) => 
+    Array.from({ length: 6 }, (_, imgIndex) => ({
+      id: pageIndex * 6 + imgIndex + 1,
+      url: `https://picsum.photos/seed/work-v2-${pageIndex}-${imgIndex}/600/400`,
+      rotation: Math.random() * 10 - 5,
+      x: Math.random() * 40 - 20,
+      y: Math.random() * 40 - 20,
+    }))
+  );
+
+  const currentImages = allPages[currentPage];
+
+  const handleToggle = (e: React.MouseEvent) => {
+    // Prevent toggling if clicking on pagination controls
+    if ((e.target as HTMLElement).closest('.pagination-control')) return;
+    setIsExpanded(!isExpanded);
+  };
+
+  return (
+    <section className="py-24 bg-stone-50 border-t border-stone-100 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-stone-900 mb-4">ภาพบรรยากาศ<span className="text-emerald-600">การทำงาน</span></h2>
+          <p className="text-stone-600">คลิกที่กองภาพเพื่อดูบรรยากาศการทำงานของเรา</p>
+        </div>
+
+        <div 
+          className="relative min-h-[650px] flex flex-col items-center justify-center cursor-pointer"
+          onClick={handleToggle}
+        >
+          <div className={`relative w-full max-w-4xl transition-all duration-500 ${isExpanded ? 'h-[500px]' : 'h-[400px]'}`}>
+            <AnimatePresence mode="popLayout">
+              {currentImages.map((img, index) => (
+                <motion.div
+                  key={img.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isExpanded ? {
+                    opacity: 1,
+                    x: (index % 3 - 1) * 320,
+                    y: Math.floor(index / 3) * 240 - 100,
+                    rotate: 0,
+                    scale: 1,
+                    zIndex: 10,
+                  } : {
+                    opacity: 1,
+                    x: img.x,
+                    y: img.y,
+                    rotate: img.rotation,
+                    scale: 1 - index * 0.02,
+                    zIndex: currentImages.length - index,
+                  }}
+                  exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 260, 
+                    damping: 20,
+                    delay: isExpanded ? index * 0.05 : 0 
+                  }}
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 md:w-80 aspect-[4/3] bg-white p-2 rounded-xl shadow-xl border border-stone-200"
+                >
+                  <img 
+                    src={img.url} 
+                    alt={`Work atmosphere ${img.id}`} 
+                    className="w-full h-full object-cover rounded-lg"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-stone-400 border border-stone-100">
+                    GE-PHOTO-{img.id.toString().padStart(3, '0')}
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {/* Pagination Controls */}
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className="pagination-control mt-12 flex items-center gap-8 z-50"
+              >
+                <button 
+                  onClick={() => setCurrentPage(prev => (prev - 1 + totalPages) % totalPages)}
+                  className="p-3 bg-white rounded-full shadow-md hover:bg-emerald-50 text-stone-600 hover:text-emerald-600 transition-all border border-stone-200"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                
+                <div className="flex gap-2">
+                  {allPages.map((_, i) => (
+                    <button 
+                      key={i}
+                      onClick={() => setCurrentPage(i)}
+                      className={`w-3 h-3 rounded-full transition-all ${currentPage === i ? 'bg-emerald-600 w-8' : 'bg-stone-300 hover:bg-stone-400'}`}
+                    />
+                  ))}
+                </div>
+
+                <button 
+                  onClick={() => setCurrentPage(prev => (prev + 1) % totalPages)}
+                  className="p-3 bg-white rounded-full shadow-md hover:bg-emerald-50 text-stone-600 hover:text-emerald-600 transition-all border border-stone-200"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <div className="mt-8">
+            {!isExpanded ? (
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-emerald-600 text-white px-6 py-2 rounded-full font-bold shadow-lg flex items-center gap-2"
+              >
+                คลิกเพื่อกระจายภาพ <Plus className="w-4 h-4" />
+              </motion.div>
+            ) : (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-stone-400 font-medium flex items-center gap-2"
+              >
+                คลิกที่พื้นที่ว่างเพื่อเก็บภาพ <Minus className="w-4 h-4" />
+              </motion.div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 
 const ContactPage = () => {
   const teamMembers = [
