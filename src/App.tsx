@@ -1135,7 +1135,7 @@ const WorkAtmosphereScatter = () => {
       { id: 21, url: "/images2/pic3.JPG", rotation: -2, x: -8, y: 14 },
       { id: 22, url: "/images2/pic7.JPG", rotation: 5, x: 10, y: -10 },
       { id: 23, url: "/images2/pic5.JPG", rotation: -7, x: -14, y: 4 },
-      { id: 24, url: "/images2/pic6.JPG", rotation: 2, x: 6, y: -8 },
+      { id: 24, url: "/images2/pic9.JPG", rotation: 2, x: 6, y: -8 },
     ]
   ];
 
@@ -1197,7 +1197,7 @@ const WorkAtmosphereScatter = () => {
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-stone-400 border border-stone-100">
-                    GE-PHOTO-{img.id.toString().padStart(3, '0')}
+                    {img.id.toString().padStart(3, '0')}
                   </div>
                 </motion.div>
               ))}
