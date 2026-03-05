@@ -947,30 +947,38 @@ const WorkAtmosphereScatter = () => {
   const allPages = [
     // หน้าที่ 1
     [
-      { id: 1, url: "https://picsum.photos/seed/work1/600/400", rotation: -5, x: -10, y: -10 },
-      { id: 2, url: "https://picsum.photos/seed/work2/600/400", rotation: 3, x: 10, y: 5 },
-      { id: 3, url: "https://picsum.photos/seed/work3/600/400", rotation: -2, x: -5, y: 15 },
-      { id: 4, url: "https://picsum.photos/seed/work4/600/400", rotation: 6, x: 15, y: -15 },
-      { id: 5, url: "https://picsum.photos/seed/work5/600/400", rotation: -8, x: -20, y: 0 },
-      { id: 6, url: "https://picsum.photos/seed/work6/600/400", rotation: 2, x: 5, y: -5 },
+      { id: 1, url: "/images2/DekshowD1.JPG", rotation: -5, x: -10, y: -10 },
+      { id: 2, url: "/images2/DekshowD2.JPG", rotation: 3, x: 10, y: 5 },
+      { id: 3, url: "/images2/DekshowD3.JPG", rotation: -2, x: -5, y: 15 },
+      { id: 4, url: "/images2/pic8.JPG", rotation: 6, x: 15, y: -15 },
+      { id: 5, url: "/images2/สวนส้มปรีชา.JPG", rotation: -8, x: -20, y: 0 },
+      { id: 6, url: "/images2/P_da.JPG", rotation: 2, x: 5, y: -5 },
     ],
     // หน้าที่ 2
     [
-      { id: 7, url: "https://picsum.photos/seed/work7/600/400", rotation: -4, x: -12, y: -8 },
-      { id: 8, url: "https://picsum.photos/seed/work8/600/400", rotation: 5, x: 8, y: 12 },
-      { id: 9, url: "https://picsum.photos/seed/work9/600/400", rotation: -1, x: -6, y: 10 },
-      { id: 10, url: "https://picsum.photos/seed/work10/600/400", rotation: 7, x: 14, y: -12 },
-      { id: 11, url: "https://picsum.photos/seed/work11/600/400", rotation: -6, x: -18, y: 2 },
-      { id: 12, url: "https://picsum.photos/seed/work12/600/400", rotation: 3, x: 4, y: -6 },
+      { id: 7, url: "/images2/สอบถาม.JPG", rotation: -4, x: -12, y: -8 },
+      { id: 8, url: "/images2/วัตถุดิบ.JPG", rotation: 5, x: 8, y: 12 },
+      { id: 9, url: "/images2/แกะสะเดา.JPG", rotation: -1, x: -6, y: 10 },
+      { id: 10, url: "/images2/บดสะเดา.JPG", rotation: 7, x: 14, y: -12 },
+      { id: 11, url: "/images2/หมักน้ำ.JPG", rotation: -6, x: -18, y: 2 },
+      { id: 12, url: "/images2/ต้ม.JPG", rotation: 3, x: 4, y: -6 },
     ],
     // หน้าที่ 3
     [
-      { id: 13, url: "https://picsum.photos/seed/work13/600/400", rotation: -3, x: -15, y: -5 },
-      { id: 14, url: "https://picsum.photos/seed/work14/600/400", rotation: 4, x: 12, y: 8 },
-      { id: 15, url: "https://picsum.photos/seed/work15/600/400", rotation: -2, x: -8, y: 14 },
-      { id: 16, url: "https://picsum.photos/seed/work16/600/400", rotation: 5, x: 10, y: -10 },
-      { id: 17, url: "https://picsum.photos/seed/work17/600/400", rotation: -7, x: -14, y: 4 },
-      { id: 18, url: "https://picsum.photos/seed/work18/600/400", rotation: 2, x: 6, y: -8 },
+      { id: 13, url: "/images2/กรอง.JPG", rotation: -3, x: -15, y: -5 },
+      { id: 14, url: "/images2/ผสม.JPG", rotation: 4, x: 12, y: 8 },
+      { id: 15, url: "/images2/คน.JPG", rotation: -2, x: -8, y: 14 },
+      { id: 16, url: "/images2/พ่น.JPG", rotation: 5, x: 10, y: -10 },
+      { id: 17, url: "/images2/ส้ม.JPG", rotation: -7, x: -14, y: 4 },
+      { id: 18, url: "/images2/pic6.JPG", rotation: 2, x: 6, y: -8 },
+    ],
+    [
+      { id: 13, url: "/images2/pic1.JPG", rotation: -3, x: -15, y: -5 },
+      { id: 14, url: "/images2/pic2.JPG", rotation: 4, x: 12, y: 8 },
+      { id: 15, url: "/images2/pic3.JPG", rotation: -2, x: -8, y: 14 },
+      { id: 16, url: "/images2/pic7.JPG", rotation: 5, x: 10, y: -10 },
+      { id: 17, url: "/images2/pic5.JPG", rotation: -7, x: -14, y: 4 },
+      { id: 18, url: "/images2/pic6.JPG", rotation: 2, x: 6, y: -8 },
     ]
   ];
 
