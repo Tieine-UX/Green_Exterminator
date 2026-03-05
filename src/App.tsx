@@ -595,7 +595,7 @@ const AboutPage = () => {
               {/* Image Container with Scanning Effect */}
               <div className="relative z-10 w-full aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="/images/silver_nano.jpg" 
+                  src="/images2/silver_nano.jpg" 
                   alt="Silver Nano Technology" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
