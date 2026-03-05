@@ -504,6 +504,99 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+          {/* Silver Nano Section */}
+      <section className="py-24 md:py-32 bg-white flex items-center border-t border-stone-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="order-2 lg:order-1"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-8 tracking-tight leading-tight">
+                นวัตกรรมใหม่ <br/>
+                <span className="text-emerald-600">Silver Nano</span>
+              </h2>
+
+              <div className="mb-8 p-6 bg-emerald-50 rounded-2xl border-l-4 border-emerald-500 text-stone-700 leading-relaxed">
+                <p className="font-bold text-emerald-800 mb-2 text-xl">Silver Nano คืออะไร?</p>
+                <p className="text-lg">
+                  Silver Nano (ซิลเวอร์นาโน) คือ อนุภาคเงินที่มีขนาดเล็กมากในระดับนาโนเมตร ซึ่งมีคุณสมบัติพิเศษในการฆ่าเชื้อโรคและยับยั้งการเจริญเติบโตของจุลินทรีย์ได้อย่างมีประสิทธิภาพสูงสุด 
+                  <span className="block mt-3 font-semibold text-emerald-700 italic">
+                    "นี่คือเทคโนโลยีที่เราได้เลือกนำมาใส่เพิ่มเข้าไปในน้ำหมักสมุนไพรของเรา เพื่อประสิทธิภาพที่เหนือกว่า"
+                  </span>
+                </p>
+              </div>
+              
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-stone-800 mb-4 flex items-center gap-3">
+                    <div className="w-2 h-8 bg-emerald-500 rounded-full" />
+                    คุณสมบัติเด่น
+                  </h3>
+                  <ul className="space-y-4 text-lg text-stone-600">
+                    <li className="flex items-start gap-3">
+                      <div className="mt-1.5 w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                      <span>ยับยั้งการเจริญเติบโตของเชื้อราและแบคทีเรียที่เป็นสาเหตุหลักของโรคพืช</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="mt-1.5 w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                      <span>อนุภาคขนาดนาโนช่วยให้สารสกัดซึมเข้าสู่เนื้อเยื่อพืชได้รวดเร็วและลึกยิ่งขึ้น</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="mt-1.5 w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                      <span>มีความคงตัวสูง ออกฤทธิ์ได้ยาวนานกว่าสารสกัดสมุนไพรทั่วไป</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-bold text-stone-800 mb-4 flex items-center gap-3">
+                    <div className="w-2 h-8 bg-orange-500 rounded-full" />
+                    ข้อดีของ Silver Nano
+                  </h3>
+                  <ul className="space-y-4 text-lg text-stone-600">
+                    <li className="flex items-start gap-3">
+                      <div className="mt-1.5 w-2 h-2 rounded-full bg-orange-500 shrink-0" />
+                      <span>เพิ่มประสิทธิภาพในการป้องกันโรคพืชได้ดีกว่าสูตรปกติถึง 2 เท่า</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="mt-1.5 w-2 h-2 rounded-full bg-orange-500 shrink-0" />
+                      <span>ปลอดภัย ไร้สารตกค้างที่เป็นอันตรายต่อผู้ใช้และสิ่งแวดล้อม</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="mt-1.5 w-2 h-2 rounded-full bg-orange-500 shrink-0" />
+                      <span>ช่วยกระตุ้นระบบภูมิคุ้มกันของพืชให้แข็งแรงและเจริญเติบโตได้ดีขึ้น</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative order-1 lg:order-2"
+            >
+              <div className="absolute inset-0 bg-stone-100 transform translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6 rounded-3xl border border-stone-200" />
+              <img 
+                src="/images2/silver_nano.png" 
+                alt="Silver Nano Technology" 
+                className="relative z-10 w-full aspect-square object-cover rounded-3xl shadow-2xl border-4 border-white"
+                referrerPolicy="no-referrer"
+              />
+
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-emerald-100 rounded-full blur-2xl opacity-60 animate-pulse" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-orange-100 rounded-full blur-3xl opacity-60 animate-pulse" style={{ animationDelay: '1.5s' }} />
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
@@ -534,8 +627,8 @@ const ProductsPage = () => {
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-stone-900 mb-2">สูตรที่ {item}</h3>
-                  <p className="text-stone-600 mb-6">รายละเอียดผลิตภัณฑ์สูตรที่ {item} (Template Content)</p>
+                  <h3 className="text-2xl font-bold text-stone-900 mb-2">ผลิตภัณฑ์น้ำหมักสมุนไพร</h3>
+                  <p className="text-stone-600 mb-6">ผลิตภัณฑ์น้ำหมักสมุนไพร </p>
                   <Link to={`/products/${item}`} className="mt-auto px-6 py-2 bg-stone-900 text-white rounded-full hover:bg-emerald-600 transition-colors">
                     ดูรายละเอียด
                   </Link>
@@ -615,12 +708,12 @@ const ProductDetailPage = () => {
                       <svg key={star} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     ))}
                   </div>
-                  <span className="text-stone-500 text-sm">ขายแล้ว 1.2k ชิ้น</span>
+                  <span className="text-stone-500 text-sm">ขายแล้ว 0 ชิ้น</span>
                 </div>
 
                 <div className="mb-8">
-                  <span className="text-4xl font-bold text-orange-600">฿250</span>
-                  <span className="text-stone-400 line-through ml-3">฿350</span>
+                  <span className="text-4xl font-bold text-orange-600">฿139</span>
+                  <span className="text-stone-400 line-through ml-3">฿199</span>
                 </div>
 
                 <div className="space-y-6 mb-8 flex-grow">
@@ -634,8 +727,8 @@ const ProductDetailPage = () => {
                   <div>
                     <h3 className="font-bold text-stone-900 mb-2">วิธีใช้</h3>
                     <ul className="list-disc list-inside text-stone-600 space-y-1">
-                      <li>ผสมน้ำหมัก 20 ซีซี ต่อน้ำ 20 ลิตร</li>
-                      <li>ฉีดพ่นทางใบทุกๆ 7-10 วัน</li>
+                      <li>ผสมน้ำหมัก 100 กรัม ต่อน้ำ 200 ลิตร</li>
+                      <li>ฉีดพ่นทางใบทุกๆ 3-5 วัน</li>
                       <li>ควรฉีดพ่นในช่วงเช้าหรือเย็นที่แดดไม่จัด</li>
                     </ul>
                   </div>
@@ -662,7 +755,7 @@ const ProductDetailPage = () => {
                         <Plus className="w-4 h-4" />
                       </button>
                     </div>
-                    <span className="text-stone-500 text-sm">มีสินค้าทั้งหมด 500 ชิ้น</span>
+                    <span className="text-stone-500 text-sm">มีสินค้าทั้งหมด 25 ชิ้น</span>
                   </div>
 
                   <div className="flex items-center gap-4">
