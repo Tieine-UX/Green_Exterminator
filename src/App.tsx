@@ -999,7 +999,7 @@ const ReviewsPage = () => {
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-emerald-700 rounded-full overflow-hidden flex items-center justify-center shrink-0">
                       <img 
-                        src={`L.JPG`} 
+                        src={`/images/L.JPG`} 
                         alt={`User ${item}`} 
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
