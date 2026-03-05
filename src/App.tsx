@@ -940,7 +940,7 @@ const ReviewsPage = () => {
 const WorkAtmosphereScatter = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = 3;
+  const totalPages = 4;
   
   // รายการรูปภาพทั้งหมด 18 รูป แบ่งเป็น 3 หน้า หน้าละ 6 รูป
   // คุณสามารถเปลี่ยน URL ของรูปภาพแต่ละใบได้ที่นี่
@@ -969,7 +969,7 @@ const WorkAtmosphereScatter = () => {
       { id: 14, url: "/images2/ผสม.JPG", rotation: 4, x: 12, y: 8 },
       { id: 15, url: "/images2/คน.JPG", rotation: -2, x: -8, y: 14 },
       { id: 16, url: "/images2/พ่น.JPG", rotation: 5, x: 10, y: -10 },
-      { id: 17, url: "/images2/ส้ม.JPG", rotation: -7, x: -14, y: 4 },
+      { id: 17, url: "/images2/ถ้ายส้ม.JPG", rotation: -7, x: -14, y: 4 },
       { id: 18, url: "/images2/pic6.JPG", rotation: 2, x: 6, y: -8 },
     ],
     [
